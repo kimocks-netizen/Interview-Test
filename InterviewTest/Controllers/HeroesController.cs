@@ -25,7 +25,9 @@ namespace InterviewTest.Controllers
                        new KeyValuePair<string, int>( "stamina", 2500 )
                    }
                }
-            };
+
+               //
+        };
 
         // GET: api/Heroes
         [HttpGet]
