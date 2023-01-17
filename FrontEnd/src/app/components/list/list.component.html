@@ -1,7 +1,5 @@
-<p>
-  list works!
-</p>
 
+<div [ngClass]="randomColorClass" id="hero-list">
 <table>
   <tr>
     <th>Name</th>
@@ -17,7 +15,8 @@
     <td>{{ hero.stats.strength }}</td>
     <td>{{ hero.stats.intelligence }}</td>
     <td>{{ hero.stats.stamina }}</td>
-    <td><button (click)="evolve(hero,name)">Evolve</button></td>
+    <td><button (click)="evolve(hero)">Evolve</button></td>
   </tr>
 </table>
+</div>
 
