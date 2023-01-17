@@ -18,11 +18,13 @@ if the action is evolve it should evolve the hero and return the hero with its n
 * add 1 method to service to get the contacts from the api located at 'http://localhost:4201/heroes'
 * create new component named 'list'
 * in the component, add the api service and get the list of contacts.
-* display the list on the frontend.
+
+
+* display the list on the frontend. //IN PROGRESS
 * Columns: name, power, stat(strength), stat(intelligence), stat(stamina)
-* next to each hero should be an `evolve` button.
-* when the button is clicked, it should post the hero name and action to the relevant endpoint
-* display the updated stats above the table "`Hero` updated with `Stats`", replacing the name and the stats
+* next to each hero should be an `evolve` button. //Done
+* when the button is clicked, it should post the hero name and action to the relevant endpoint //In PROGRESS
+* display the updated stats above the table "`Hero` updated with `Stats`", replacing the name and the stats //havent done
 
 ### CSS
 * There should be a heading (h2) with the title 'Tour of Heroes'.
