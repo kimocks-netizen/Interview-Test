@@ -31,8 +31,8 @@ namespace InterviewTest
                 {
                     builder.AllowAnyHeader()
                         .AllowAnyMethod()
-                        .AllowAnyOrigin()
-                        .AllowCredentials();
+                        .AllowAnyOrigin();
+                       // .AllowCredentials();
                 });
             });
 

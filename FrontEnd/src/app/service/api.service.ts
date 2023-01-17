@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  readonly BaseURL ="http://localhost:5000/api/";
-
+  //readonly BaseURL ="http://localhost:5000/api/";
+  readonly BaseURL ="http://localhost:4201/api/";
   constructor(private httpclient: HttpClient) { }
   //method to get the contacts from the api located at 'http://localhost:4201/heroes'
   public getContactsOfHeros(): Observable<any[]>{
@@ -15,7 +15,6 @@ export class ApiService {
   }
 
   public evolve(action: string, heroName: string){
-    return this.httpclient.post(this.BaseURL +"Heroes",{action, heroName}); //Heroes or heroes
 
   }
 }

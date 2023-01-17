@@ -7,7 +7,7 @@ namespace InterviewTest.Controllers
 {
     public interface IHero
     {
-         void evolve(int statIncrease = 5);
+         void evolve();
        
     }
 }

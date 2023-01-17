@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InterviewTest.Controllers
 {
+    // [EnableCors(origins: "*", headers: "*", methods: "*")]
     [Route("api/[controller]")]
     [ApiController]
     public class HeroesController : ControllerBase
@@ -42,8 +43,12 @@ namespace InterviewTest.Controllers
 
         // POST: api/Heroes
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] string heronName, string action = "none")
         {
+            if(action == "evolve")
+            {
+                this.heroes.Where(x => x.name == heronName).FirstOrDefault().evolve();
+            }
         }
 
         // PUT: api/Heroes/5

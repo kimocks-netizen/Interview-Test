@@ -12,15 +12,17 @@ namespace InterviewTest.Controllers
         public string name { get; set; }
         public string power { get; set; }
         public List<KeyValuePair<string, int>> stats {get;set;}
-        public void evolve(int statIncrease = 5)
+        public void evolve()
         {
-            List<KeyValuePair<string, int>> arrr = new List<KeyValuePair<string, int>>();
-            foreach(KeyValuePair<string, int>acct in stats)
-            {
-                //var newStats = new KeyValuePair<string, int>(arrr.Key,(int));
-            }
+            List<KeyValuePair<String, int>> newStats = stats.Select(x =>
+            new KeyValuePair<String, int>
+            (
+                x.Key,
+                Convert.ToInt32(x.Value * 1.5)
+            )).ToList();
 
-
+            this.stats = newStats;
+    
         }
     }
 }
