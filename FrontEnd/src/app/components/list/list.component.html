@@ -1,3 +1,23 @@
 <p>
   list works!
 </p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Power</th>
+    <th>Strength</th>
+    <th>Intelligence</th>
+    <th>Stamina</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let hero of heroes">
+    <td>{{ hero.name }}</td>
+    <td>{{ hero.power }}</td>
+    <td>{{ hero.stats.strength }}</td>
+    <td>{{ hero.stats.intelligence }}</td>
+    <td>{{ hero.stats.stamina }}</td>
+    <td><button (click)="evolve(hero,name)">Evolve</button></td>
+  </tr>
+</table>
+
