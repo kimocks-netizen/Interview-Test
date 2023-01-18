@@ -42,6 +42,7 @@ export class ListComponent implements OnInit {
   getHeros(){
     this.service.getContactsOfHeros().subscribe(res => {
       this.heroes=res;
+      this.generateRandomColorClass();
     });
   }
 
