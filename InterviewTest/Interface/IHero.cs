@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace InterviewTest.Controllers
 {
+    //Refactor the Hero class to implement an interface of IHero.
     public interface IHero
     {
          void evolve();

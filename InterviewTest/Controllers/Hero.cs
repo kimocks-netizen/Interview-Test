@@ -12,6 +12,8 @@ namespace InterviewTest.Controllers
         public string name { get; set; }
         public string power { get; set; }
         public List<KeyValuePair<string, int>> stats {get;set;}
+
+        //The `evolve` method on the class should increment all stats of the hero with a multiple of half the original stat value.
         public void evolve()
         {
             List<KeyValuePair<String, int>> newStats = stats.Select(x =>

@@ -47,9 +47,11 @@ namespace InterviewTest.Controllers
         // POST: api/Heroes
         [HttpPost]
        [Route("evolve")]
+        //The `post` method should read an `action` parameter which defaults to `none`
         public IEnumerable<Hero> Evolve([FromBody] evolveRequest request)
         {
-            if(request.action == "evolve")
+            //if the action is evolve it should evolve the hero and return the hero with its new stats.
+            if (request.action == "evolve")
             {
                 heroes.Where(x => x.name == request.heroName).FirstOrDefault().evolve();
             }
