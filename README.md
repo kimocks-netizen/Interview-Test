@@ -10,7 +10,7 @@
 * Refactor the Hero class to implement an interface of IHero.
 * The `evolve` method on the class should increment all stats of the hero with a multiple of half the original stat value.
 * The `post` method should read an `action` parameter which defaults to `none`
-if the action is evolve it should evolve the hero and return the hero with its new stats.
+* if the action is evolve it should evolve the hero and return the hero with its new stats.
 
 ## Front-end
 ### Angular
@@ -20,11 +20,11 @@ if the action is evolve it should evolve the hero and return the hero with its n
 * in the component, add the api service and get the list of contacts.
 
 
-* display the list on the frontend. //IN PROGRESS
-* Columns: name, power, stat(strength), stat(intelligence), stat(stamina)
-* next to each hero should be an `evolve` button. //Done
-* when the button is clicked, it should post the hero name and action to the relevant endpoint //In PROGRESS
-* display the updated stats above the table "`Hero` updated with `Stats`", replacing the name and the stats //havent done
+* display the list on the frontend. 
+* Columns: name, power, stat(strength), stat(intelligence), stat(stamina) //In progress
+* next to each hero should be an `evolve` button. 
+* when the button is clicked, it should post the hero name and action to the relevant endpoint 
+* display the updated stats above the table "`Hero` updated with `Stats`", replacing the name and the stats //how many times-not specified
 
 ### CSS
 * There should be a heading (h2) with the title 'Tour of Heroes'.
@@ -33,3 +33,5 @@ if the action is evolve it should evolve the hero and return the hero with its n
 * set the color to `blue`
 * create 4 color related classes with different font weights and colors and backgrounds.
 * Add a random color class to the list of heroes
+
+
