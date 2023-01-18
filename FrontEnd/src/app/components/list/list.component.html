@@ -13,6 +13,7 @@
       <div  id="hero-list">
       <table class="rwd-table" >
         <thead >
+
           <tr >
             <th>Name</th>
             <th style="text-align:center">Power</th>
@@ -23,16 +24,16 @@
           </tr>
         </thead>
         <tr *ngFor="let hero of Heroes" [ngClass]="randomColorClass">
-          <td class="text-center">{{ hero.name }}</td>
-          <td class="text-center">{{ hero.power }}</td>
-          <td class="text-center">{{ hero.stats[0].value }}</td>
-          <td class="text-center">{{ hero.stats[1].value }}</td>
-          <td class="text-center">{{ hero.stats[2].value }}</td>
+          <td  style="width: 14% " >{{ hero.name }}</td>
+          <td style="text-align:center" >{{ hero.power }}</td>
+          <td style="width: 14%; text-align:center">{{ hero.stats[0].value }}</td>
+          <td style="width: 14%; text-align:center" >{{ hero.stats[1].value }}</td>
+          <td style="width: 14%; text-align:center">{{ hero.stats[2].value }}</td>
 
-          <td>
-            <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-              <button class="custom-btn btn-1" aria-pressed="true" (click)="evolve(hero)"><span>Evolve</span></button>
-            </div>
+          <td style="width: 14%">
+            <!-- <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0" > -->
+              <button class="custom-btn btn-1" aria-pressed="true" (click)="evolve(hero)" ><span>Evolve</span></button>
+            <!-- </div> -->
           </td>
         </tr>
       </table>

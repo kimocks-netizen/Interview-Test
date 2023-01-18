@@ -1,3 +1,4 @@
+//create new service called 'api'
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,7 +10,7 @@ export class ApiService {
   post(arg0: string, arg1: { action: string; }) {
     throw new Error('Method not implemented.');
   }
-  //readonly BaseURL ="http://localhost:5000/api/";
+
   readonly BaseURL ="http://localhost:4201/api/";
   constructor(private httpclient: HttpClient) { }
 
@@ -18,9 +19,6 @@ export class ApiService {
     return this.httpclient.get<any[]>(this.BaseURL +"Heroes"); //Heroes or heroes
   }
 
-  // public evolve(action: string, heroName: string){
-
-  // }
   public Evolve(hero){
     const objHero={
       heroName: hero.name,

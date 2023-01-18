@@ -29,11 +29,6 @@ export class ListComponent implements OnInit {
     this.getHeros();
   }
 
-  // evolve(hero: any) {
-  //   this.service.post(`http://localhost:4201/heroes/${hero.name}/evolve`, {action: 'evolve'}).subscribe(data => {
-  //     this.heroes = data;
-  //   });
-  // }
   evolve(hero: any) {
    this.service.Evolve(hero).subscribe(data =>{
     this.heroes=data;
