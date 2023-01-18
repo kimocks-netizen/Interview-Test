@@ -1,30 +1,41 @@
-<div class="card-body">
-  <div  id="hero-list">
-  <table class="rwd-table" >
-    <thead >
-      <tr >
-        <th>Name</th>
-        <th >Power</th>
-        <th>Strength</th>
-        <th>Intelligence</th>
-        <th>Stamina</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tr *ngFor="let hero of heroes" [ngClass]="randomColorClass">
-      <td class="text-center">{{ hero.name }}</td>
-      <td class="text-center">{{ hero.power }}</td>
-      <td class="text-center">{{ hero.stats[0].value }}</td>
-      <td class="text-center">{{ hero.stats[1].value }}</td>
-      <td class="text-center">{{ hero.stats[2].value }}</td>
-      <!-- <td><button (click)="evolve(hero)">Evolve</button></td> -->
-      <td>
-        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-          <button class="custom-btn btn-1" aria-pressed="true" (click)="evolve(hero)"><span>Evolve</span></button>
-        </div>
-      </td>
-    </tr>
-  </table>
+<div *ngIf="Heroes.length !==0">
+  <div *ngIf="updatedStats" class="col-md-12">
+  <div *ngFor="let hero of heroes" >
+    <p>Name: {{ hero.name }}</p>
+     <p>Power: {{ hero.power }}</p>
+    <h3>Hero updated with Stats</h3>
+    <p>Strength: {{ hero.stats[0].value }}</p>
+    <p>Intelligence: {{ hero.stats[1].value }}</p>
+    <p>Stamina: {{ hero.stats[2].value }}</p>
   </div>
-</div>
+  </div>
+    <div class="card-body">
+      <div  id="hero-list">
+      <table class="rwd-table" >
+        <thead >
+          <tr >
+            <th>Name</th>
+            <th style="text-align:center">Power</th>
+            <th style="text-align:center">Stat(Strength)</th>
+            <th style="text-align:center">Stat(Intelligence)</th>
+            <th style="text-align:center">Stat(Stamina)</th>
+            <th style="text-align:center">Action</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let hero of Heroes" [ngClass]="randomColorClass">
+          <td class="text-center">{{ hero.name }}</td>
+          <td class="text-center">{{ hero.power }}</td>
+          <td class="text-center">{{ hero.stats[0].value }}</td>
+          <td class="text-center">{{ hero.stats[1].value }}</td>
+          <td class="text-center">{{ hero.stats[2].value }}</td>
 
+          <td>
+            <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+              <button class="custom-btn btn-1" aria-pressed="true" (click)="evolve(hero)"><span>Evolve</span></button>
+            </div>
+          </td>
+        </tr>
+      </table>
+      </div>
+    </div>
+</div>

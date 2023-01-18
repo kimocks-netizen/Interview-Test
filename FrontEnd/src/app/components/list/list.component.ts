@@ -8,15 +8,16 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class ListComponent implements OnInit {
 
-  heroes: any;
+  Heroes: any=[];
+  heroes: any=null;
+
   colorClasses = ["color-class-1", "color-class-2", "color-class-3", "color-class-4"];
   randomColorClass: string;
+  updatedStats=false;
 
 
   constructor(public service: ApiService) {
-    // this.service.getContactsOfHeros().subscribe(res => {
-    //   console.log(res)
-    // })
+
    }
 
    generateRandomColorClass() {
@@ -36,12 +37,13 @@ export class ListComponent implements OnInit {
   evolve(hero: any) {
    this.service.Evolve(hero).subscribe(data =>{
     this.heroes=data;
+    this.updatedStats=true;
     this.generateRandomColorClass();
    });
   }
   getHeros(){
     this.service.getContactsOfHeros().subscribe(res => {
-      this.heroes=res;
+      this.Heroes=res;
       this.generateRandomColorClass();
     });
   }
