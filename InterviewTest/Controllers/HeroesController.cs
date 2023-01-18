@@ -50,6 +50,12 @@ namespace InterviewTest.Controllers
         //The `post` method should read an `action` parameter which defaults to `none`
         public IEnumerable<Hero> Evolve([FromBody] evolveRequest request)
         {
+            //The `post` method should read an `action` parameter which defaults to `none`
+            if (request.action == "none")
+            {
+                heroes = null;
+               
+            }
             //if the action is evolve it should evolve the hero and return the hero with its new stats.
             if (request.action == "evolve")
             {
