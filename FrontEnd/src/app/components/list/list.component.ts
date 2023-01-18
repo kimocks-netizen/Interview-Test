@@ -25,14 +25,26 @@ export class ListComponent implements OnInit {
    // in the component, add the api service and get the list of contacts.
   ngOnInit() {
     this.generateRandomColorClass();
+    this.getHeros();
+  }
+
+  // evolve(hero: any) {
+  //   this.service.post(`http://localhost:4201/heroes/${hero.name}/evolve`, {action: 'evolve'}).subscribe(data => {
+  //     this.heroes = data;
+  //   });
+  // }
+  evolve(hero: any) {
+   this.service.Evolve(hero).subscribe(data =>{
+    this.heroes=data;
+    this.generateRandomColorClass();
+   });
+  }
+  getHeros(){
     this.service.getContactsOfHeros().subscribe(res => {
       this.heroes=res;
     });
   }
 
-  evolve(hero: any) {
-    // this.service.post(`http://localhost:4201/heroes/${hero.name}/evolve`, {action: 'evolve'}).subscribe(data => {
-    //   this.heroes = data;
-    // });
-  }
+
 }
+

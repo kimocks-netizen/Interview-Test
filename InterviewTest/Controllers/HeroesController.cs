@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InterviewTest.Classes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,12 +46,14 @@ namespace InterviewTest.Controllers
 
         // POST: api/Heroes
         [HttpPost]
-        public void Post([FromBody] string heronName, string action = "none")
+       [Route("evolve")]
+        public IEnumerable<Hero> Evolve([FromBody] evolveRequest request)
         {
-            if(action == "evolve")
+            if(request.action == "evolve")
             {
-                this.heroes.Where(x => x.name == heronName).FirstOrDefault().evolve();
+                heroes.Where(x => x.name == request.heroName).FirstOrDefault().evolve();
             }
+            return heroes;
         }
 
         // PUT: api/Heroes/5

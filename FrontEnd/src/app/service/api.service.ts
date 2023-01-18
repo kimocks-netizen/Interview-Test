@@ -18,7 +18,15 @@ export class ApiService {
     return this.httpclient.get<any[]>(this.BaseURL +"Heroes"); //Heroes or heroes
   }
 
-  public evolve(action: string, heroName: string){
+  // public evolve(action: string, heroName: string){
+
+  // }
+  public Evolve(hero){
+    const objHero={
+      heroName: hero.name,
+      action: "evolve"
+    }
+    return this.httpclient.post<any>(this.BaseURL +"Heroes/evolve",objHero);
 
   }
 }

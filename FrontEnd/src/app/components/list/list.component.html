@@ -1,22 +1,30 @@
-
-<div [ngClass]="randomColorClass" id="hero-list">
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Power</th>
-    <th>Strength</th>
-    <th>Intelligence</th>
-    <th>Stamina</th>
-    <th>Action</th>
-  </tr>
-  <tr *ngFor="let hero of heroes">
-    <td>{{ hero.name }}</td>
-    <td>{{ hero.power }}</td>
-    <td>{{ hero.stats.strength }}</td>
-    <td>{{ hero.stats.intelligence }}</td>
-    <td>{{ hero.stats.stamina }}</td>
-    <td><button (click)="evolve(hero)">Evolve</button></td>
-  </tr>
-</table>
+<div class="card-body">
+  <div  id="hero-list">
+  <table class="rwd-table" >
+    <thead >
+      <tr >
+        <th>Name</th>
+        <th >Power</th>
+        <th>Strength</th>
+        <th>Intelligence</th>
+        <th>Stamina</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let hero of heroes" [ngClass]="randomColorClass">
+      <td class="text-center">{{ hero.name }}</td>
+      <td class="text-center">{{ hero.power }}</td>
+      <td class="text-center">{{ hero.stats[0].value }}</td>
+      <td class="text-center">{{ hero.stats[1].value }}</td>
+      <td class="text-center">{{ hero.stats[2].value }}</td>
+      <!-- <td><button (click)="evolve(hero)">Evolve</button></td> -->
+      <td>
+        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+          <button class="custom-btn btn-1" aria-pressed="true" (click)="evolve(hero)"><span>Evolve</span></button>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </div>
 </div>
 

@@ -21,7 +21,7 @@ namespace InterviewTest.Controllers
                 Convert.ToInt32(x.Value * 1.5)
             )).ToList();
 
-            this.stats = newStats;
+            stats = newStats;
     
         }
     }
